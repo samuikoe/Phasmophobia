@@ -264,11 +264,10 @@
             vertical-align: middle;
         }
         
-        /* 优化列宽 - 证据列更宽，特征列更宽，种类列更窄 */
         th:nth-child(1) { width: 10%; }
-        th:nth-child(2) { width: 10%; } /* 种类列缩短 */
-        th:nth-child(3) { width: 25%; } /* 证据列宽度不变 */
-        th:nth-child(4) { width: 55%; } /* 特征列加宽 */
+        th:nth-child(2) { width: 10%; } 
+        th:nth-child(3) { width: 25%; } 
+        th:nth-child(4) { width: 55%; } 
         
         td {
             padding: 18px;
@@ -325,7 +324,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center; /* 确保证据项垂直居中 */
+            align-items: center;
             gap: 10px;
             margin-top: 5px;
         }
@@ -338,9 +337,9 @@
             border: 1px solid rgba(76, 201, 240, 0.3);
             white-space: nowrap;
             display: flex;
-            align-items: center; /* 确保内容垂直居中 */
+            align-items: center;
             justify-content: center;
-            height: 36px; /* 固定高度确保垂直居中 */
+            height: 36px;
         }
         
         .features {
@@ -360,7 +359,7 @@
         
         .features li::before {
             content: "•";
-            color: #ffffff; /* 白色标记点 */
+            color: #ffffff;
             font-size: 1.8rem;
             position: absolute;
             left: 0;
@@ -407,9 +406,9 @@
             }
             
             th:nth-child(1) { width: 18%; }
-            th:nth-child(2) { width: 12%; } /* 种类列缩短 */
+            th:nth-child(2) { width: 12%; }
             th:nth-child(3) { width: 25%; }
-            th:nth-child(4) { width: 45%; } /* 特征列加宽 */
+            th:nth-child(4) { width: 45%; }
         }
         
         @media (max-width: 900px) {
@@ -474,7 +473,6 @@
                 font-size: 1.8rem;
             }
             
-            /* 移动端表格列宽调整 */
             th:nth-child(1) { width: 25%; }
             th:nth-child(2) { width: 25%; }
             th:nth-child(3) { width: 50%; }
@@ -1086,7 +1084,7 @@
             document.body.style.overflow = '';
         }
 
-        // 更新下拉选项（排除已选证据）
+        // 排除已选证据
         function updateSelectOptions() {
             // 获取当前选择的证据
             const selectedEvidence = [
@@ -1119,7 +1117,7 @@
                 }
             });
             
-            // 恢复当前值（如果仍然可用）
+            // 恢复当前值
             if (allEvidence.includes(currentValue) && !excludeEvidence.includes(currentValue)) {
                 selectElement.value = currentValue;
             } else if (currentValue !== "") {
